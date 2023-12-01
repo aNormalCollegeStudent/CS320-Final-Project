@@ -1,0 +1,12 @@
+---
+- name: Create a directory if it does not exist
+  ansible.builtin.file:
+    path: /etc/pki/nginx/private/
+    state: directory
+    mode: '0700'
+
+- name: Generate a Self Signed OpenSSL certificate
+  openssl_certificate:
+    path: /etc/pki/nginx/server.crt
+    privatekey_path: /etc/pki/nginx/private/server.key
+    provider: selfsigned

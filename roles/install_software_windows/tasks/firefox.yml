@@ -1,0 +1,6 @@
+---
+- name: Install Firefox silently
+  chocolatey.chocolatey.win_chocolatey:
+    name: firefox
+    install_args: "/S"
+    state: present

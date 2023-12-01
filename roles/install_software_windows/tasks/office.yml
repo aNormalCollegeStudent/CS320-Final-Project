@@ -1,0 +1,5 @@
+---
+- name: Install Office 365
+  chocolatey.chocolatey.win_chocolatey:
+    name: office365business
+    state: present

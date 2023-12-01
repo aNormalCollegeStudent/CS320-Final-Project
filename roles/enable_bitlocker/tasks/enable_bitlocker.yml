@@ -1,0 +1,4 @@
+---
+- name: Enable BitLocker on the system drive
+  ansible.windows.win_shell: |
+    Enable-BitLocker -MountPoint C: -UsedSpaceOnly -RecoveryPasswordProtector

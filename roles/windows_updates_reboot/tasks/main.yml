@@ -1,0 +1,4 @@
+---
+- set_fact: role_name=windows_updates_reboot
+
+- import_tasks: update.yml

@@ -1,0 +1,5 @@
+---
+- set_fact: role_name=enable_bitlocker
+
+- import_tasks: enable_bitlocker.yml
+- import_tasks: save_key.yml

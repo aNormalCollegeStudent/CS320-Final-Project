@@ -1,0 +1,6 @@
+---
+- set_fact: role_name=configure_firewall_linux
+
+- import_tasks: firewalld.yml
+- import_tasks: 80.yml
+- import_tasks: 443.yml

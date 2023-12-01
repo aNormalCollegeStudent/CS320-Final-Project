@@ -1,0 +1,7 @@
+---
+# make sure that httpd isn't already trying to bind to the same port if this errors
+- name: Enable and start the nginx service
+  ansible.builtin.systemd:
+    name: nginx
+    enabled: true
+    state: restarted

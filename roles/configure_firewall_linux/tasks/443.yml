@@ -1,0 +1,8 @@
+---
+- name: Add allow rule for 443 to firewall
+  ansible.builtin.firewalld: 
+    port: 443/tcp 
+    permanent: true 
+    state: enabled
+  notify: "restart firewalld"
+  

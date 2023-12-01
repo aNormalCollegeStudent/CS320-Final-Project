@@ -1,0 +1,5 @@
+---
+- set_fact: role_name=install_email_server
+
+- import_tasks: install.yml
+

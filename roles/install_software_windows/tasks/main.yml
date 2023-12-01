@@ -1,0 +1,7 @@
+---
+- set_fact: role_name=install_software_windows
+
+- import_tasks: chrome.yml
+- import_tasks: firefox.yml
+- import_tasks: office.yml
+- import_tasks: vlc.yml

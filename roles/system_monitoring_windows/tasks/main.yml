@@ -1,0 +1,6 @@
+---
+- set_fact: role_name=system_monitoring_windows
+
+- import_tasks: cpu.yml
+- import_tasks: ram.yml
+- import_tasks: disk.yml

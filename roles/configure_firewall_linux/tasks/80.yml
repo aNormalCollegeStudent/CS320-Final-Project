@@ -1,0 +1,7 @@
+---
+- name: Add allow rule for 80 to firewall
+  ansible.builtin.firewalld: 
+    port: 80/tcp 
+    permanent: true 
+    state: enabled
+  notify: "restart firewalld"

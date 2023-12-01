@@ -1,0 +1,10 @@
+---
+- name: Obtain information on disks
+  ansible.windows.win_shell: |
+    Get-Volume
+  register: disk_info
+
+- name: Display disk info
+  ansible.builtin.debug:
+    msg: 
+      - "{{ disk_info.stdout_lines }}"

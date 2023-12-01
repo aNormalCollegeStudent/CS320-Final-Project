@@ -1,0 +1,11 @@
+---
+- name: Install Postfix
+  ansible.builtin.dnf:
+    name: postfix, mailx
+    state: latest
+
+- name: Enable Postfix and Start it
+  ansible.builtin.systemd:
+    name: postfix
+    enabled: true
+    state: started

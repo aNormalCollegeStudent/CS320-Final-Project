@@ -1,0 +1,5 @@
+---
+- set_fact: role_name=configure_freeradius
+
+- import_tasks: install.yml
+

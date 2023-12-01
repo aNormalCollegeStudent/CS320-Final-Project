@@ -1,0 +1,5 @@
+---
+- set_fact: role_name=configure_security_windows
+
+- import_tasks: open_ports.yml
+- import_tasks: realtime_protection.yml

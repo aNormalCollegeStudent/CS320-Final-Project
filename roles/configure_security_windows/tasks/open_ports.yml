@@ -1,0 +1,20 @@
+---
+- name: Open 3389 TCP
+  community.windows.win_firewall_rule:
+    name: 3389 TCP
+    localport: 3389
+    action: allow
+    direction: in
+    protocol: tcp
+    state: present
+    enabled: yes
+
+- name: Open 3389 UDP
+  community.windows.win_firewall_rule:
+    name: 3389 UDP
+    localport: 3389
+    action: allow
+    direction: in
+    protocol: udp
+    state: present
+    enabled: yes

@@ -1,0 +1,16 @@
+---
+- hosts: windowsMachines
+  roles:
+    - install_software_windows
+    - configure_security_windows
+    - enable_bitlocker
+    - system_monitoring_windows
+    - windows_updates_reboot
+
+- hosts: cisLinuxServer
+  become: true
+  roles:
+    - configure_nginx
+    - configure_firewall_linux
+    - install_email_server
+    - configure_freeradius

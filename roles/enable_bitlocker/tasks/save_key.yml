@@ -1,0 +1,23 @@
+---
+- name: get the bitlocker key
+  ansible.windows.win_shell: |
+    $BitlockerVolumers = Get-BitLockerVolume
+    $BitlockerVolumers |
+      ForEach-Object {
+        $MountPoint = $_.MountPoint 
+        $RecoveryKey = [string]($_.KeyProtector).RecoveryPassword       
+        if ($RecoveryKey.Length -gt 5) {
+          Write-Output ("$RecoveryKey")
+        }        
+      }                                            
+  register: bitlocker_key
+
+# you would want to protect the file from this task in ansible vault to make sure that it is secure.
+- name: Save key to file
+  ansible.builtin.lineinfile:
+    line: "{{ bitlocker_key.stdout }}"
+    dest: "recoverykey.txt"
+    create: yes
+  delegate_to: localhost
+
+

@@ -1,0 +1,12 @@
+[cisLinuxServer]
+10.2.37.19	ansible_user=cisstudent
+
+[windowsMachines]
+10.2.37.95
+
+[windowsMachines:vars]
+ansible_user=cisuser
+ansible_password="cisisfun2023!"
+ansible_port=5986
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore

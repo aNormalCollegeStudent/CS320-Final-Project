@@ -1,0 +1,4 @@
+---
+- name: Display free ram count
+  ansible.builtin.debug:
+    msg: "{{ ansible_facts['memfree_mb'] }} free of {{ ansible_facts['memtotal_mb'] }}"

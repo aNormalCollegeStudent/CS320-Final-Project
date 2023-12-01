@@ -1,0 +1,11 @@
+---
+- name: Install freeradius
+  ansible.builtin.dnf:
+    name: freeradius
+    state: latest
+
+- name: Enable freeradius and start it
+  ansible.builtin.systemd:
+    name: radiusd
+    enabled: true
+    state: started

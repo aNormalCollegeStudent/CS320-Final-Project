@@ -1,0 +1,5 @@
+---
+- name: Install VLC
+  chocolatey.chocolatey.win_chocolatey:
+    name: vlc
+    state: present
